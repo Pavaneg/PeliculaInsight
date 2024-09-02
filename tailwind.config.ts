@@ -13,6 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        customInsight: {
+          500: '#719eba', // Puedes cambiar estos valores por los colores que desees
+          600: '#5c7f9a',
+          700: '#284660',
+          800: '#1e364b',
+        },
+      },
     },
   },
   plugins: [],
