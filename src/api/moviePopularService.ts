@@ -19,8 +19,6 @@ export const fetchMovies = async () => {
       break;
     }
   }
-
-  console.log(movies.slice(0, 20));
   return movies.slice(0, 20);
 };
 

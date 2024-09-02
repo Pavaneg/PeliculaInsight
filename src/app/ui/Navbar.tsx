@@ -14,7 +14,7 @@ export default function Example() {
                 <div className="flex lg:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">PeliculaInsight</span>
-                        <img alt="" src="./logo.png" className="h-10 w-auto" />
+                        <img alt="" src="/logo.png" className="h-10 w-auto" />
                     </Link>
                 </div>
                 <div className="flex lg:hidden">

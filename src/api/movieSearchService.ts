@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchMovies = async (query: string) => {
-  const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/search/movie", {
+  const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/search/movie?language=es", {
     params: { 
       api_key: process.env.NEXT_PUBLIC_API_KEY,
       query: query,

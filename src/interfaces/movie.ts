@@ -1,3 +1,4 @@
+import { Videos } from "./videos";
 export interface Movie {
   adult: boolean;
   backdrop_path: string;
@@ -10,7 +11,7 @@ export interface Movie {
   poster_path: string;
   release_date: string;
   title: string;
-  video: boolean;
+  videos: Videos;
   vote_average: number;
   vote_count: number;
 }
