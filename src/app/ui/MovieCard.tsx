@@ -9,11 +9,13 @@ interface MovieCardProps {
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const posterPath = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "/peliculaStock.jpg"; // Ruta a la imagen predeterminada en la carpeta public
+    : "/peliculaStock.jpg"; // Imagen por defecto pelicula sin caratula
+  
+    const releaseDate = new Date(movie.release_date).toLocaleDateString('es-ES'); // Formatear fecha
 
   return (
     <Link href={`/movies/${movie.id}`}>
-        <div key={movie.id} className="bg-white rounded-md shadow-md">
+        <div key={movie.id} className="bg-white rounded-md shadow-md my-3">
           <Image
             src={posterPath}
             alt={movie.title}
@@ -23,8 +25,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
             priority={true}
           />
           <div className="p-4">
-            <h3 className="text-lg font-semibold">{movie.title}</h3>
-            <p className="text-sm mt-2">{movie.overview}</p>
+            <h3 className="text-lg font-semibold text-center">{movie.title}</h3>
+            <p className="text-sm mt-2 text-center">{releaseDate}</p>
           </div>
         </div>
     </Link>
