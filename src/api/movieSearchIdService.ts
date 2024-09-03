@@ -1,4 +1,3 @@
-// src/api/movieSearchIdService.ts
 import axios from 'axios';
 
 export const fetchMovie = async (id: string) => {
