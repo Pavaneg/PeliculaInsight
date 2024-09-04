@@ -54,7 +54,7 @@ export default function Navbar() {
                         <Link href="/categorias" className="text-sm font-semibold leading-6 text-gray-900">
                             Categorias
                         </Link>
-                        <Link href="/peliculas" className="text-sm font-semibold leading-6 text-gray-900">
+                        <Link href="/mylist" className="text-sm font-semibold leading-6 text-gray-900">
                             Todas
                         </Link>
                     </PopoverGroup>
