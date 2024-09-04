@@ -11,9 +11,6 @@ const RatingForm: React.FC<RatingFormProps> = ({ movieId, sessionId }) => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    console.log('Movie ID:', movieId); // Log para depuración
-    console.log('Session ID:', sessionId); // Log para depur
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {

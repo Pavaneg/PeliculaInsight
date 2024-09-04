@@ -35,9 +35,9 @@ const MovieDetail = ({ params }: MovieDetailProps) => {
     const fetchSession = async () => {
       try {
         const session = await createGuestSession();
-        dispatch({ type: 'CREATE_SESSION', payload: session });
+        
       } catch (error) {
-        console.error('Failed to create guest session', error);
+        
       }
     };
 
@@ -49,9 +49,6 @@ const MovieDetail = ({ params }: MovieDetailProps) => {
   }, [id, state.guestSession, dispatch]);
 
   const guestSession = state.guestSession;
-
-  console.log('Guest Session:', guestSession); // Log para depuración
-  console.log('Movie:', movie); // Log para depuración
 
   return (
       <div className="container mx-auto px-4 py-8">
