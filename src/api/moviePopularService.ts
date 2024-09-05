@@ -11,7 +11,12 @@ export const fetchMovies = async () => {
     });
 
     const filteredMovies = response.data.results.filter((movie: Movie) => movie.overview);
-    movies = [...movies, ...filteredMovies];
+
+    filteredMovies.forEach((movie: Movie) => {
+      if (!movies.some(m => m.id === movie.id)) {
+        movies.push(movie);
+      }
+    });
 
     if (filteredMovies.length < response.data.results.length) {
       page++;
@@ -19,10 +24,5 @@ export const fetchMovies = async () => {
       break;
     }
   }
-
-  console.log(movies.slice(0, 20));
   return movies.slice(0, 20);
 };
-
-
-
