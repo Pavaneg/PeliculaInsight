@@ -62,11 +62,14 @@ const SearchPage = () => {
 
       <section className="w-full py-6 px-4">
         <div className="container mx-auto">
-          <h2 className="text-center text-3xl font-semibold">Peliculas</h2>
           <div className="grid grid-cols-4 gap-4 mt-6">
-            {results.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
+            {results.length === 0 ? (
+              <p className="text-center col-span-4 text-white">No hay resultados para esta búsqueda.</p>
+            ) : (
+              results.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+              ))
+            )}
           </div>
         </div>
       </section>

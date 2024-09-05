@@ -10,8 +10,8 @@ const MovieCardRated: React.FC<MovieCardProps> = ({ movie }) => {
   const posterPath = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "/peliculaStock.jpg";
-  
-    const releaseDate = new Date(movie.release_date).toLocaleDateString('es-ES');
+
+  const releaseDate = new Date(movie.release_date).toLocaleDateString('es-ES');
 
   return (
     <Link href={`/movies/${movie.id}`}>
@@ -27,7 +27,7 @@ const MovieCardRated: React.FC<MovieCardProps> = ({ movie }) => {
         <div className="p-4">
           <h3 className="text-lg font-semibold text-center">{movie.title}</h3>
           <p className="text-sm mt-2 text-center">{releaseDate}</p>
-          <p className="text-center">Rating: {movie.rating}</p>
+          <p className="text-center">Nota: {movie.rating}</p>
         </div>
       </div>
     </Link>

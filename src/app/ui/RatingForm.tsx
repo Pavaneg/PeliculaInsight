@@ -23,10 +23,10 @@ const RatingForm: React.FC<RatingFormProps> = ({ movieId, sessionId }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Valorar Película</h2>
-            <div className="flex items-center mb-4">
-                <label htmlFor="rating" className="font-bold mr-2">Rating:</label>
+        <form onSubmit={handleSubmit} className="mt-8 mx-auto p-4 bg-zinc-200 shadow-md rounded-lg">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Valorar Película</h2>
+            <div className="flex flex-col mb-6">
+                <label htmlFor="rating" className="font-bold mb-2">Nota:</label>
                 <input
                     type="number"
                     id="rating"
@@ -35,14 +35,15 @@ const RatingForm: React.FC<RatingFormProps> = ({ movieId, sessionId }) => {
                     min="0"
                     max="10"
                     required
-                    className="border rounded p-2"
+                    placeholder="Ingrese un rating de 0 a 10"
+                    className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
-            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Submit Rating
+            <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                Enviar Nota
             </button>
-            {error && <p className="text-red-500 mt-2">{error}</p>}
-            {success && <p className="text-green-500 mt-2">{success}</p>}
+            {error && <p className="text-red-500 mt-4">No se pudo enviar la nota</p>}
+            {success && <p className="text-green-500 mt-4">Nota enviada correctamente</p>}
         </form>
     );
 };

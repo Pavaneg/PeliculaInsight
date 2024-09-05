@@ -18,11 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>
-      <SessionProvider>
-        <Navbar />
-        {children}
-      </SessionProvider>
+      <body className="">
+        <SessionProvider>
+          <Navbar />
+          <div className="bg-img">{children}</div>
+        </SessionProvider>
       </body>
     </html>
   );

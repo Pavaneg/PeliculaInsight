@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function getRatedMovies(guestSessionId: string) {
     try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/guest_session/${guestSessionId}/rated/movies`, {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/guest_session/${guestSessionId}/rated/movies?language=es`, {
             params: {
                 api_key: process.env.NEXT_PUBLIC_API_KEY,
             },
