@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Proyecto basado en React con Next.js y Tailwind
 
-First, run the development server:
+Este proyecto está basado en **React** con **Next.js** y **Tailwind CSS**, añadiendo algunas librerías pequeñas para la gestión de iconos, `iframe` o fuentes.
+
+## Iniciar el proyecto
+
+Primero, para iniciar el proyecto, debemos crear el archivo `.env.local`. Dentro de este archivo, es necesario definir tres variables:
+
+```bash
+NEXT_PUBLIC_API_URL = 'https://api.themoviedb.org/3'
+NEXT_PUBLIC_API_IMAGE_URL = 'https://image.tmdb.org/t/p/original/'
+NEXT_PUBLIC_API_KEY = 'TU_CLAVE_API_DE_TMDB'
+```
+
+Después, como en cualquier proyecto, instalamos las dependencias con el siguiente comando:
+
+```bash
+npm install
+```
+
+Finalmente, podemos ejecutar el proyecto con cualquiera de los siguientes comandos:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
+# o
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Luego, solo es necesario abrir [localhost:3000](http://localhost:3000) en el navegador para comenzar a usar el proyecto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura del proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+El proyecto está diseñado para ser fácilmente mantenible y escalable, gracias al **code-splitting** y una buena estructura organizativa.
 
-## Learn More
+Las carpetas clave del proyecto son:
 
-To learn more about Next.js, take a look at the following resources:
+- **api**: Contiene todos los servicios utilizados para realizar las llamadas a la API (en este caso, la API de TMDB).
+- **context**: Aquí se encuentra el archivo de configuración donde se almacenan los datos de la sesión de invitado.
+- **interfaces**: Almacena todas las interfaces de los objetos utilizados en el proyecto.
+- **ui**: Contiene todos los componentes reutilizables del proyecto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Los principales endpoints del proyecto son:
 
-## Deploy on Vercel
+- **Home** (`/`): Página de inicio donde se muestran las listas de películas populares y un buscador en la parte superior.
+- **/search**: Página de búsqueda, donde podremos filtrar los resultados a través del buscador.
+- **/movies/{id}**: Vista detallada de una película. En esta página también encontraremos un formulario para calificar la película (es necesario iniciar sesión para poder calificar).
+- **/mylist**: Sección donde podemos visualizar las notas dadas a las películas en una sesión.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Cosas a tener en cuenta
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Al iniciar sesión, aparecerá en la parte inferior de la pantalla información relacionada con la sesión, incluyendo su duración.
+- Si no has iniciado sesión, no podrás acceder a la sección **/mylist**.
+- Si refrescamos la página, se eliminará la sesión actual, ya que el proyecto funciona como una **SPA** (Single Page Application).
+- Parte del proyecto tiene responsive
+- Se aplico el LazyCoding
